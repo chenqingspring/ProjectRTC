@@ -3,6 +3,7 @@ function RTCStream(id, stream, client) {
   this.id = id;
   this.name = ko.observable(stream.name);
   this.client = client;
+  this.command = ko.observable();
   this.points = ko.observable((stream.votes === 0) ? 0 : stream.rating/stream.votes);
   this.state = ko.observable('Available');
   this.rate = function() {
@@ -16,8 +17,9 @@ function RTCStream(id, stream, client) {
 function RTCViewModel(client) {
   var self = this;
   this.client = client;
-  this.availableStreams = ko.observable([]);
-  this.isStreaming = ko.observable(false);
+    this.availableStreams = ko.observable([]);
+    this.command = ko.observable();
+    this.isStreaming = ko.observable(false);
   this.name = ko.observable('Guest');
   ko.computed(function() {
     if(self.isStreaming()) {
@@ -62,6 +64,17 @@ function RTCViewModel(client) {
       stream.state('Playing');
     }
   };
+
+  this.sendCommand = function(stream) {
+      console.log("-------------------------------");
+      console.log("send command: " + stream.command() + "to: " + stream.id);
+
+      client.connection.emit('message', {
+          to: stream.id,
+          type: 'command',
+          payload: {"ceshi": stream.command()}
+      });
+  }
   
   this.getStreamById = function(id) {
     for(var i=0; i<self.availableStreams().length;i++) {
