@@ -30,7 +30,7 @@ exports.rename = function(id, name) {
 exports.index = function(req, res) {
   res.render('index', { title: 'Project RTC', 
                         header: 'Web RTC live streaming',
-                        footer: 'by Pierre Chabardes'
+                        footer: ''
                       });
 };
 
