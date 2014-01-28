@@ -28,8 +28,6 @@
         		<td data-bind="css: { selected: state() == 'Playing' }, click: $root.chooseStream"><a data-bind="text: name"></a></td>
         		<td data-bind="text: state"></td>
         		<td data-bind="starRating: points, click: rate"></td>
-				<td><input data-bind="value: command" /></td>
-				<td><button data-bind="click: $root.sendCommand">send</button></td>
     		</tr>
 		</tbody>		
 	</table>

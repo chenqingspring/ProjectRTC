@@ -78,4 +78,10 @@ io.sockets.on('connection', function(client) {
 
   client.on('disconnect', leave);
   client.on('leave', leave);
+
+    client.on('keyboard message from client event', function (data) {
+        client.broadcast.emit("keyboard message to other client event", {action: data});
+        console.log("keyboard message from client event");
+        console.log(data);
+    });
 });
