@@ -22,16 +22,16 @@ remote = (function(){
         $("body").bind('keydown', function(event){
             if (!allowed) return;
             allowed = false;
-            if (event.keyCode == 87){
+            if (event.keyCode == 38){
                 sentKeyboardMessageToServer("w");
             }
-            else if (event.keyCode == 83){
+            else if (event.keyCode == 40){
                 sentKeyboardMessageToServer("s");
             }
-            else if (event.keyCode == 65){
+            else if (event.keyCode == 37){
                 sentKeyboardMessageToServer("a");
             }
-            else if (event.keyCode == 68){
+            else if (event.keyCode == 39){
                 sentKeyboardMessageToServer("d");
             }
             else{
@@ -41,16 +41,16 @@ remote = (function(){
 
         $("body").bind('keyup', function(event){
             allowed = true;
-            if (event.keyCode == 87){
+            if (event.keyCode == 38){
                 sentKeyboardMessageToServer("h");
             }
-            else if (event.keyCode == 83){
+            else if (event.keyCode == 40){
                 sentKeyboardMessageToServer("h");
             }
-            else if (event.keyCode == 65){
+            else if (event.keyCode == 37){
                 sentKeyboardMessageToServer("h");
             }
-            else if (event.keyCode == 68){
+            else if (event.keyCode == 39){
                 sentKeyboardMessageToServer("h");
             }
             else{
