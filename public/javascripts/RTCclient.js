@@ -98,7 +98,9 @@ function RTCclient () {
   this.config = {
     url: window.location.origin,
     peerConnectionConfig: {
-      iceServers: [{"url": "stun:176.58.114.68:3478"}]
+      iceServers: [{"url": "stun:23.21.150.121"}
+                  ,{"url": "stun:176.58.114.68:3478"}
+                  ,{"url": "stun:stun.l.google.com:19302"}]
     },
     peerConnectionConstraints: {
       optional: [{"DtlsSrtpKeyAgreement": true}]
