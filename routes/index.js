@@ -35,7 +35,9 @@ exports.index = function(req, res) {
 };
 
 exports.ds = function(req, res) {
-  res.render('ds', { title: 'DORA' });
+  res.render('ds',  { title: 'DORA',
+                      footer: ''
+                    });
 };
 
 exports.streams = function(req, res) {
