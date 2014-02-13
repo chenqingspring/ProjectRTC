@@ -1,19 +1,6 @@
 <%= include layoutTop %>
   <body>
     <h1><%= header %></h1>
-    <div class="localCam">
-      <p>Username :<input data-bind="value: name" /></p>
-      <h2>Local Camera</h2>
-    <video id="localVideo"></video>
-    <ul>
-      <li data-bind="visible: !($root.isStreaming())"><a href="#" data-bind="click: $root.startLocalVideo">Share</a></li>
-      <li data-bind="visible: $root.isStreaming()"><a href="#" data-bind="click: $root.stopLocalVideo">Stop</a></li>
-    </ul>
-    <p data-bind="visible: $root.isStreaming()">
-      Share this link :
-      <a data-bind="text: link"></a>
-    </p>
-  </div>
   <table>
     <h2>Remote Streams</h2>
     <div id="remoteVideosContainer"></div>
