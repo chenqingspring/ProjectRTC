@@ -1,10 +1,9 @@
 <%= include layoutTop %>
   <body>
-    <h1><%= header %></h1>
   <table>
     <h2>Remote Streams</h2>
     <div id="remoteVideosContainer"></div>
-    <a href="#" data-bind="click: $root.refresh">Refresh List</a>
+      <a href="#" data-bind="click: $root.refresh">Refresh List</a>
       <thead>
         <tr>
             <th>Stream</th><th>Status</th><th>Rating</th>
@@ -13,10 +12,8 @@
       <tbody data-bind="foreach: availableStreams">
         <tr class="remoteStream">
             <td data-bind="css: { selected: state() == 'Playing' }, click: $root.chooseStream"><a data-bind="text: name"></a></td>
-            <td data-bind="text: state"></td>
-            <td data-bind="starRating: points, click: rate"></td>
         </tr>
-    </tbody>    
+    </tbody>
   </table>
   <script>
     client = new RTCclient();

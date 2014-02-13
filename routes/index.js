@@ -35,10 +35,7 @@ exports.index = function(req, res) {
 };
 
 exports.ds = function(req, res) {
-  res.render('ds', { title: 'DORA', 
-                        header: 'Web RTC live streaming',
-                        footer: ''
-                      });
+  res.render('ds', { title: 'DORA' });
 };
 
 exports.streams = function(req, res) {
