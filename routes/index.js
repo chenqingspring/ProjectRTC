@@ -34,6 +34,13 @@ exports.index = function(req, res) {
                       });
 };
 
+exports.share = function(req, res) {
+  res.render('share', { title: 'Project RTC',
+                        header: 'Web RTC live streaming',
+                        footer: ''
+                      });
+};
+
 exports.streams = function(req, res) {
   res.json(200, streamList); 
 };

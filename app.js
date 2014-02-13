@@ -28,6 +28,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
+app.get('/share', routes.share);
 app.get('/streams', routes.streams);
 app.get('/:id', routes.watch);
 

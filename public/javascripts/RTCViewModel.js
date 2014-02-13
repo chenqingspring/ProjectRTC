@@ -51,7 +51,7 @@ function RTCViewModel(client) {
   };
   
   this.chooseStream = function(stream) {
-    if(stream.state() === 'Playing') {
+    if(stream.state() === 'In Use') {
       remote.stopRemoteControl();
       client.connection.emit('message', {
         to: stream.id,
@@ -61,7 +61,7 @@ function RTCViewModel(client) {
     } else {
       remote.startRemoteControl();
       client.peerOffer(stream.id);
-      stream.state('Playing');
+      stream.state('In Use');
     }
   };
 
