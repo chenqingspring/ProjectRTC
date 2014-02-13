@@ -1,5 +1,6 @@
 <%= include layoutTop %>
   <body>
+    <div id="testImg"><img src="images/test-img.png" /></div>
     <div id="remoteVideosContainer"></div>
     <div id="robot-controls">
       <table>
@@ -18,17 +19,10 @@
           </tbody>    
       </table>
     </div>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>    
   <script>
     client = new RTCclient();
     vm = new RTCViewModel(client)
     ko.applyBindings(vm);
-
-    $(document).ready(function(){
-      $.delay(5);
-      $('table tr td a').text('x-robot').click();
-      alert('I am ready!');
-    });
   </script>
   <style>
     body, html {
@@ -38,7 +32,16 @@
 
     video {
       width: 100%;
-      height: 100%;    
+      height: auto;
+    }
+
+    #testImg img {
+      width: 100%;
+      height: auto;
+    }
+
+    #remoteVideosContainer {
+      display: none;
     }
   </style>
 <%= include layoutBottom %>
