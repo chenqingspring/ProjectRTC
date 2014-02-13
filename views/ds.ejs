@@ -1,7 +1,7 @@
 <%= include layoutTop %>
   <body>
     <div id="remoteVideosContainer"></div>
-    <div id="controls">
+    <div id="robot-controls">
       <table>
         <a href="#" data-bind="click: $root.refresh">Refresh List</a>
           <thead>
@@ -25,6 +25,8 @@
     ko.applyBindings(vm);
 
     $(document).ready(function(){
+      $('table tr td a').text('x-robot').click();
+      $('#robot-controls').hide();
       alert('I am ready!');
     });
   </script>
