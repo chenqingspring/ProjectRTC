@@ -36,6 +36,7 @@ exports.index = function(req, res) {
 
 exports.ds = function(req, res) {
   res.render('ds',  { title: 'DORA',
+                      header: '',
                       footer: ''
                     });
 };
