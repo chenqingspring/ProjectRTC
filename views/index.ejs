@@ -1,7 +1,13 @@
 <%= include layoutTop %>
   <body>
   <table>
-    <div id="remoteVideosContainer"></div>
+    <div id="container">
+      <div id="remoteVideosContainer"></div>
+      <div id="floorPlanCanvas"  >
+          <img id="background" src="/images/floorplan.png"/>
+          <img id="pointer" src="/images/pointer.png"/>
+      </div>
+    </div>
     <a href="#" data-bind="click: $root.refresh">Robot List</a>
       <thead>
         <tr>

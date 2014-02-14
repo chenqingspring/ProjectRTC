@@ -72,3 +72,33 @@ table, tr, td, th {margin:0;border:0;padding:5px;border-collapse: collapse;}
 	white-space: nowrap;
 }
 
+#container{
+    position: relative;
+    width: 640px;
+    height: 480px;
+}
+
+#floorPlanCanvas {
+
+
+    width: 30%;
+    height: 30%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#background{
+    opacity: 0.5;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+}
+
+#pointer {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 5.5%;
+    height: 7%;
+}
