@@ -33,21 +33,21 @@ $(document).ready(function () {
     }
 
     function update() {
-        if (37 in keysDown) {
+        if (65 in keysDown) {
             mySprite.degree -= 1;    //left
             mySprite.moveSpeedX = Math.sin(mySprite.degree*Math.PI/180);
             mySprite.moveSpeedY = Math.cos(mySprite.degree*Math.PI/180);
         }
-        if (38 in keysDown) {    //up
+        if (87 in keysDown) {    //up
             mySprite.y -= mySprite.moveSpeedY;
             mySprite.x += mySprite.moveSpeedX;
         }
-        if (39 in keysDown) {   //right
+        if (68 in keysDown) {   //right
             mySprite.degree += 1;
             mySprite.moveSpeedX = Math.sin(mySprite.degree*Math.PI/180);
             mySprite.moveSpeedY = Math.cos(mySprite.degree*Math.PI/180);
         }
-        if (40 in keysDown) {   //down
+        if (83 in keysDown) {   //down
             mySprite.y += mySprite.moveSpeedY;
             mySprite.x -= mySprite.moveSpeedX;
         }

@@ -22,16 +22,16 @@ remote = (function(){
         $("body").bind('keydown', function(event){
             if (!allowed) return;
             allowed = false;
-            if (event.keyCode == 38){
+            if (event.keyCode == 87){
                 sentKeyboardMessageToServer("w");
             }
-            else if (event.keyCode == 40){
+            else if (event.keyCode == 83){
                 sentKeyboardMessageToServer("s");
             }
-            else if (event.keyCode == 37){
+            else if (event.keyCode == 65){
                 sentKeyboardMessageToServer("a");
             }
-            else if (event.keyCode == 39){
+            else if (event.keyCode == 68){
                 sentKeyboardMessageToServer("d");
             }
             else{
