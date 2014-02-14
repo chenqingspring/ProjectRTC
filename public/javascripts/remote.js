@@ -41,16 +41,16 @@ remote = (function(){
 
         $("body").bind('keyup', function(event){
             allowed = true;
-            if (event.keyCode == 38){
+            if (event.keyCode == 87){
                 sentKeyboardMessageToServer("h");
             }
-            else if (event.keyCode == 40){
+            else if (event.keyCode == 83){
                 sentKeyboardMessageToServer("h");
             }
-            else if (event.keyCode == 37){
+            else if (event.keyCode == 65){
                 sentKeyboardMessageToServer("h");
             }
-            else if (event.keyCode == 39){
+            else if (event.keyCode == 68){
                 sentKeyboardMessageToServer("h");
             }
             else{
