@@ -1,36 +1,18 @@
 <%= include layoutTop %>
   <body>
-  <table>
-    <div id="container">
-      <div id="remoteVideosContainer"></div>
-      <div id="floorPlanCanvas"  >
-          <img id="background" src="/images/floorplan.png"/>
-          <img id="pointer" src="/images/pointer.png"/>
-      </div>
-      <div id="operationsCanvas">
-          <img src="/images/hangup_phone.png" id="hangup" title="release the robot!"/>
-          <img src="/images/microphone.png" id="mic" title="mute microphone"/>
-          <img src="/images/battery.png" id="battery" title="battery"/>
-          <img src="/images/camera.png" id="camera" title="take a snapshot"/>
-          <img src="/images/video-camera.png" id="video" title="take a video record"/>
-      </div>
-      <div id="logoCanvas">
-          <img src="/images/casa-logo.jpg"/>
-      </div>
-    </div>
-    <a href="#" data-bind="click: $root.refresh">Robot List</a>
-      <thead>
-        <tr>
-            <th>Robot</th><th>Status</th>
-         </tr>
-       </thead>
-      <tbody data-bind="foreach: availableStreams">
-        <tr class="remoteStream">
-            <td data-bind="css: { selected: state() == 'In Use' }, click: $root.chooseStream"><a data-bind="text: name"></a></td>
-            <td data-bind="text: state"></td>
-        </tr>
-    </tbody>
-  </table>
+    <div class="localCam">
+      <p>Username :<input data-bind="value: name" /></p>
+      <h2>Local Camera</h2>
+    <video id="localVideo"></video>
+    <ul>
+      <li data-bind="visible: !($root.isStreaming())"><a href="#" data-bind="click: $root.startLocalVideo">Share</a></li>
+      <li data-bind="visible: $root.isStreaming()"><a href="#" data-bind="click: $root.stopLocalVideo">Stop</a></li>
+    </ul>
+    <p data-bind="visible: $root.isStreaming()">
+      Share this link :
+      <a data-bind="text: link"></a>
+    </p>
+  </div>
   <script>
     client = new RTCclient();
     vm = new RTCViewModel(client)
