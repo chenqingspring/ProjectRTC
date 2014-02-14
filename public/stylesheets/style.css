@@ -79,8 +79,6 @@ table, tr, td, th {margin:0;border:0;padding:5px;border-collapse: collapse;}
 }
 
 #floorPlanCanvas {
-
-
     width: 30%;
     height: 30%;
     position: absolute;
@@ -101,4 +99,45 @@ table, tr, td, th {margin:0;border:0;padding:5px;border-collapse: collapse;}
     top: 0px;
     width: 5.5%;
     height: 7%;
+}
+
+#operationsCanvas {
+    opacity: 0.4;
+    background-color: #ffffff;
+    height: 180px;
+    z-index: 1000;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#mic {
+    position: absolute;
+    left: 17px;
+    top: 50px;
+}
+
+#battery {
+    position: absolute;
+    left: 10px;
+    top: 90px;
+}
+
+#camera {
+    position: absolute;
+    left: 10px;
+    top: 120px;
+}
+
+#video {
+    position: absolute;
+    left: 10px;
+    top: 150px;
+}
+
+#logoCanvas {
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    background-color: white;
 }
